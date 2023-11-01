@@ -3769,7 +3769,7 @@
         docs:"https://docs.rsshub.app/routes/university#chong-qing-wen-li-xue-yuan",
         source:"/:type",
         target:(params) => {
-                    if (params.type === 'channel_7721.html') {
+                    if (params.type === 'channel_24894.html') {
                         return '/cqwu/news/notify';
                     }
                 } },
@@ -3777,7 +3777,7 @@
         docs:"https://docs.rsshub.app/routes/university#chong-qing-wen-li-xue-yuan",
         source:"/:type",
         target:(params) => {
-                    if (params.type === 'channel_7722.html') {
+                    if (params.type === 'channel_24895.html') {
                         return '/cqwu/news/academiceve';
                     }
                 } } ] },
@@ -5841,6 +5841,40 @@
         docs:"https://docs.rsshub.app/routes/government#mao-ming-shi-ren-min-zheng-fu-mao-ming-shi-dian-bai-qu-ren-min-zheng-fu",
         source:[ "/*" ],
         target:(params, url) => `/gov/dianbai/${new URL(url).host.split('.dianbai.gov.cn')[0] + new URL(url).pathname.replace(/(index.*$)/g, '')}` } ] },
+  "forestry.gov.cn":{ _name:"国家林业和草原局",
+    ".":[ { title:"国家林草科技大讲堂",
+        docs:"https://docs.rsshub.app/routes/government#guo-jia-lin-ye-he-cao-yuan-ju-guo-jia-lin-cao-ke-ji-da-jiang-tang",
+        source:[ "gjlckjdjt.jhtml" ],
+        target:(_, url) => {
+                    url = new URL(url);
+                    const path = url.href.match(/\/([\w]+)\.jhtml/)[1];
+
+                    return `/gov/forestry/gjlckjdjt${path ? `/${path}` : ''}`;
+                } },
+      { title:"国家林草科技大讲堂 - 经济林",
+        docs:"https://docs.rsshub.app/routes/government#guo-jia-lin-ye-he-cao-yuan-ju-guo-jia-lin-cao-ke-ji-da-jiang-tang",
+        source:[ "jjl.jhtml" ],
+        target:"/gov/forestry/gjlckjdjt/jjl" },
+      { title:"国家林草科技大讲堂 - 林木良种",
+        docs:"https://docs.rsshub.app/routes/government#guo-jia-lin-ye-he-cao-yuan-ju-guo-jia-lin-cao-ke-ji-da-jiang-tang",
+        source:[ "lmlz.jhtml" ],
+        target:"/gov/forestry/gjlckjdjt/lmlz" },
+      { title:"国家林草科技大讲堂 - 林下经济",
+        docs:"https://docs.rsshub.app/routes/government#guo-jia-lin-ye-he-cao-yuan-ju-guo-jia-lin-cao-ke-ji-da-jiang-tang",
+        source:[ "lxjj.jhtml" ],
+        target:"/gov/forestry/gjlckjdjt/lxjj" },
+      { title:"国家林草科技大讲堂 - 生态修复",
+        docs:"https://docs.rsshub.app/routes/government#guo-jia-lin-ye-he-cao-yuan-ju-guo-jia-lin-cao-ke-ji-da-jiang-tang",
+        source:[ "stxf.jhtml" ],
+        target:"/gov/forestry/gjlckjdjt/stxf" },
+      { title:"国家林草科技大讲堂 - 用材林",
+        docs:"https://docs.rsshub.app/routes/government#guo-jia-lin-ye-he-cao-yuan-ju-guo-jia-lin-cao-ke-ji-da-jiang-tang",
+        source:[ "ycl.jhtml" ],
+        target:"/gov/forestry/gjlckjdjt/ycl" },
+      { title:"国家林草科技大讲堂 - 其他",
+        docs:"https://docs.rsshub.app/routes/government#guo-jia-lin-ye-he-cao-yuan-ju-guo-jia-lin-cao-ke-ji-da-jiang-tang",
+        source:[ "qt.jhtml" ],
+        target:"/gov/forestry/gjlckjdjt/qt" } ] },
   "gaozhou.gov.cn":{ _name:"高州市人民政府",
     www:[ { title:"高州市人民政府",
         docs:"https://docs.rsshub.app/routes/government#mao-ming-shi-ren-min-zheng-fu-gao-zhou-shi-ren-min-zheng-fu",
@@ -6078,6 +6112,11 @@
         docs:"https://docs.rsshub.app/routes/finance#zhong-guo-ren-min-yin-xing",
         source:[ "/redianzhuanti/118742/4122386/4122692/index.html" ],
         target:"/gov/pbc/gzlw" } ] },
+  "samr.gov.cn":{ _name:"国家市场监督管理总局",
+    xgzlyhd:[ { title:"留言咨询",
+        docs:"https://docs.rsshub.app/routes/government#guo-jia-shi-chang-jian-du-guan-li-zong-ju",
+        source:[ "/gjjly/index" ],
+        target:"/gov/samr/xgzlyhd/:category?/:department?" } ] },
   "sasac.gov.cn":{ _name:"国务院国有资产监督管理委员会",
     ".":[ { title:"通用",
         docs:"https://docs.rsshub.app/routes/other#guo-wu-yuan-guo-you-zi-chan-jian-du-guan-li-wei-yuan-hui",
@@ -11204,7 +11243,12 @@
         docs:"https://docs.rsshub.app/routes/university#bei-jing-da-xue",
         source:[ "/homes/Index/news_jz/7/7.html",
           "/" ],
-        target:"/pku/cls/lecture" } ],
+        target:"/pku/cls/lecture" },
+      { title:"生命科学学院通知公告",
+        docs:"https://docs.rsshub.app/routes/university#bei-jing-da-xue",
+        source:[ "/homes/Index/news/21/21.html",
+          "/" ],
+        target:"/pku/cls/announcement" } ],
     eecs:[ { title:"信科公告通知",
         docs:"https://docs.rsshub.app/routes/university#bei-jing-da-xue",
         source:[ "/xygk1/ggtz/:type",
@@ -15800,6 +15844,12 @@
         docs:"https://docs.rsshub.app/routes/traditional-media#du-mai-xin-wen",
         source:[ "/:category?" ],
         target:"/yomiuri/:category?" } ] },
+  "yomujp.com":{ _name:"日本語多読道場",
+    ".":[ { title:"等级",
+        docs:"https://docs.rsshub.app/zh/routes/reading#ri-ben-yu-duo-du-dao-chang-deng-ji",
+        source:[ "/",
+          "/:level" ],
+        target:"/yomujp/:level" } ] },
   "youku.com":{ _name:"优酷",
     i:[ { title:"订阅作者",
         docs:"https://docs.rsshub.app/routes/multimedia#you-ku",

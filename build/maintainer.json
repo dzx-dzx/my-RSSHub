@@ -1979,8 +1979,9 @@
     "/douban/jobs/:type": [
         "Fatpandac"
     ],
-    "/douban/list/:type?": [
-        "5upernova-heng"
+    "/douban/list/:type?/:routeParams?": [
+        "5upernova-heng",
+        "honue"
     ],
     "/douban/movie/classification/:sort?/:score?/:tags?": [
         "zzwab"
@@ -2824,6 +2825,9 @@
         "nicolaszf",
         "nczitzk"
     ],
+    "/gov/forestry/gjlckjdjt/:category?": [
+        "nczitzk"
+    ],
     "/gov/gaozhou/:path+": [
         "ShuiHuo"
     ],
@@ -2955,6 +2959,9 @@
         "Fatpandac"
     ],
     "/gov/province/:name/:category": [],
+    "/gov/samr/xgzlyhd/:category?/:department?": [
+        "nczitzk"
+    ],
     "/gov/sapprft/approval/:channel/:detail?": [],
     "/gov/sasac/:path+": [
         "TonyRL"
@@ -5415,6 +5422,9 @@
     "/pku/bbs/hot": [
         "wooddance"
     ],
+    "/pku/cls/announcement": [
+        "william-swl"
+    ],
     "/pku/cls/lecture": [
         "TPOB"
     ],
@@ -7710,6 +7720,9 @@
     ],
     "/yomiuri/:category?": [
         "Arracc"
+    ],
+    "/yomujp/:level?": [
+        "eternasuno"
     ],
     "/youdao/latest": [],
     "/youdao/xueba": [],
