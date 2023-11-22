@@ -711,6 +711,9 @@
     "/bangumi/tv/calendar/today": [
         "magic-akari"
     ],
+    "/bangumi/tv/followrank": [
+        "honue"
+    ],
     "/bangumi/tv/group/:id": [
         "SettingDust"
     ],
@@ -1052,6 +1055,9 @@
         "N78Wy"
     ],
     "/booth.pm/shop/:subdomain": [],
+    "/bossdesign/:category?": [
+        "TonyRL"
+    ],
     "/boston/:tag?": [],
     "/brave/latest": [
         "nczitzk"
@@ -1402,6 +1408,9 @@
         "nczitzk"
     ],
     "/cls/telegraph/:category?": [
+        "nczitzk"
+    ],
+    "/cma/channel/:id?": [
         "nczitzk"
     ],
     "/cmde/:cate*": [
@@ -2015,6 +2024,9 @@
     ],
     "/douban/people/:userid/wish/:routeParams?": [
         "exherb"
+    ],
+    "/douban/recommended/:type?/:routeParams?": [
+        "honue"
     ],
     "/douban/replied/:uid": [
         "nczitzk"
@@ -2915,8 +2927,13 @@
     "/gov/mmht/:path+": [
         "ShuiHuo"
     ],
-    "/gov/moa/:suburl(.*)": [],
-    "/gov/moa/sjzxfb": [],
+    "/gov/moa/:suburl": [
+        "Origami404"
+    ],
+    "/gov/moa/zdscxx/:channel?/:source?": [
+        "MisteryMonster",
+        "nczitzk"
+    ],
     "/gov/moe/:type": [
         "Crawler995"
     ],
@@ -3046,6 +3063,9 @@
     "/gov/zhejiang/gwy/:category?/:column?": [
         "nczitzk"
     ],
+    "/gov/zhengce/:category?": [
+        "nczitzk"
+    ],
     "/gov/zhengce/govall/:advance?": [
         "ciaranchen"
     ],
@@ -3056,7 +3076,8 @@
         "zxx-457"
     ],
     "/gov/zhengce/zuixin": [
-        "SettingDust"
+        "SettingDust",
+        "nczitzk"
     ],
     "/gq/tw/:caty?/:subcaty?": [
         "nczitzk"
@@ -3120,6 +3141,9 @@
     ],
     "/guangdiu/rank": [
         "fatpandac"
+    ],
+    "/guangdiu/search/:query?": [
+        "Huzhixin00"
     ],
     "/guanggoo/:category?": [],
     "/guangzhoumetro/news": [
@@ -3963,6 +3987,9 @@
     ],
     "/javlibrary/genre/:genre?/:language?/:mode?": [
         "nczitzk"
+    ],
+    "/javlibrary/maker/:maker?/:language?/:mode?": [
+        "Zhixin Hu"
     ],
     "/javlibrary/mostwanted/:language?/:mode?": [
         "nczitzk"

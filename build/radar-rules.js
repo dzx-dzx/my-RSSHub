@@ -1888,7 +1888,11 @@
       { title:"放送列表",
         docs:"https://docs.rsshub.app/routes/anime#bangumi-fan-zu-ji-hua",
         source:"/calendar",
-        target:"/bangumi/tv/calendar/today" } ] },
+        target:"/bangumi/tv/calendar/today" },
+      { title:"成员关注动画榜",
+        docs:"https://docs.rsshub.app/routes/anime#bangumi-fan-zu-ji-hua",
+        source:"/anime",
+        target:"/bangumi/tv/followrank" } ] },
   "bgm.tv":{ _name:"Bangumi 番组计划",
     ".":[ { title:"小组话题",
         docs:"https://docs.rsshub.app/routes/anime#bangumi-fan-zu-ji-hua",
@@ -1925,7 +1929,11 @@
       { title:"放送列表",
         docs:"https://docs.rsshub.app/routes/anime#bangumi-fan-zu-ji-hua",
         source:"/calendar",
-        target:"/bangumi/tv/calendar/today" } ] },
+        target:"/bangumi/tv/calendar/today" },
+      { title:"成员关注动画榜",
+        docs:"https://docs.rsshub.app/routes/anime#bangumi-fan-zu-ji-hua",
+        source:"/anime",
+        target:"/bangumi/tv/followrank" } ] },
   "baozimh.com":{ _name:"包子漫画",
     www:[ { title:"订阅漫画",
         docs:"https://docs.rsshub.app/routes/multimedia#bandcamp-upcoming-live-streams",
@@ -2364,6 +2372,12 @@
     mmda:[ { title:"MMDArchive 标签查询",
         docs:"https://docs.rsshub.app/routes/picture#booru-mmdarchive-biao-qian-cha-xun",
         source:"/index.php" } ] },
+  "bossdesign.cn":{ _name:"Boss 设计",
+    ".":[ { title:"分类",
+        docs:"https://docs.rsshub.app/routes/design#boss-she-ji",
+        source:[ "/:category?",
+          "/" ],
+        target:(params) => `/bossdesign${params.category ? `/${params.category}` : ''}` } ] },
   "brave.com":{ _name:"Brave",
     ".":[ { title:"Release Notes",
         docs:"https://docs.rsshub.app/routes/program-update#brave-release-notes",
@@ -3527,6 +3541,16 @@
         docs:"https://docs.rsshub.app/routes/finance#cai-lian-she",
         source:[ "/" ],
         target:"/cls/hot" } ] },
+  "cma.cn":{ _name:"中国气象局",
+    weather:[ { title:"天气预报频道",
+        docs:"https://docs.rsshub.app/routes/forecast#zhong-guo-qi-xiang-ju-tian-qi-yu-bao-pin-dao",
+        source:[ "/web/*" ],
+        target:(_, url) => {
+                    url = new URL(url).href;
+                    const idMatches = url.match(/channel-(\d+)\.html/);
+
+                    return `/cma/channel${idMatches ? `/${idMatches[1]}` : ''}`;
+                } } ] },
   "cmde.org.cn":{ _name:"国家药品监督管理局医疗器械技术审评中心",
     www:[ { title:"通用",
         docs:"https://docs.rsshub.app/routes/government#guo-jia-yao-pin-jian-du-guan-li-ju-yi-liao-qi-xie-ji-shu-shen-ping-zhong-xin",
@@ -6040,6 +6064,25 @@
         docs:"https://docs.rsshub.app/routes/government#mao-ming-shi-ren-min-zheng-fu-guang-dong-mao-ming-gao-xin-ji-shu-chan-ye-kai-fa-qu",
         source:[ "/*" ],
         target:(params, url) => `/gov/mmht/${new URL(url).host.split('.mmht.gov.cn')[0] + new URL(url).pathname.replace(/(index.*$)/g, '')}` } ] },
+  "moa.gov.cn":{ _name:"中华人民共和国农业农村部",
+    ".":[ { title:"新闻",
+        docs:"https://docs.rsshub.app/routes/government#zhong-hua-ren-min-gong-he-guo-jiao-yu-bu-xin-wen",
+        source:[ "/" ],
+        target:"/gov/moa/:suburl" } ],
+    zdscxx:[ { title:"数据",
+        docs:"https://docs.rsshub.app/routes/government#zhong-hua-ren-min-gong-he-guo-jiao-yu-bu",
+        source:[ "/nyb/pc/messageView.jsp" ],
+        target:(_params, _url, document) => {
+                    if (!document) {
+                        return '/gov/moa/zdscxx';
+                    }
+                    const selected = document.querySelectorAll('.colorRed');
+                    const categories = Array.from(selected)
+                        .map((s) => s.getAttribute('_key'))
+                        .join('/');
+
+                    return `/gov/moa/zdscxx${categories ? `/${categories}` : ''}`;
+                } } ] },
   "moe.gov.cn":{ _name:"中华人民共和国教育部",
     ".":[ { title:"新闻",
         docs:"https://docs.rsshub.app/routes/government#zhong-hua-ren-min-gong-he-guo-jiao-yu-bu",
@@ -6240,6 +6283,14 @@
         source:[ "/pushinfo/v150203",
           "/" ],
         target:"/gov/news/gwy" },
+      { title:"政策",
+        docs:"https://docs.rsshub.app/routes/government#zhong-guo-zheng-fu-wang-zheng-ce",
+        source:[ "/zhengce/:category*" ],
+        target:(params) => {
+                    const category = params.category;
+
+                    return `/gov/zhengce${category ? `/${category}` : ''}`;
+                } },
       { title:"最新政策",
         docs:"https://docs.rsshub.app/routes/government#zhong-guo-zheng-fu-wang",
         source:[ "/zhengce/zuixin.htm",
@@ -6363,6 +6414,10 @@
       { title:"九块九",
         docs:"https://docs.rsshub.app/routes/shopping#guang-diu",
         source:[ "/cheaps.php" ],
+        target:(param, url) => `/guangdiu/${url.indexOf('?') > -1 ? url.split('?')[1] : ''}` },
+      { title:"关键字搜索",
+        docs:"https://docs.rsshub.app/routes/shopping#guang-diu",
+        source:[ "/search.php" ],
         target:(param, url) => `/guangdiu/${url.indexOf('?') > -1 ? url.split('?')[1] : ''}` } ] },
   "gzmtr.com":{ _name:"广州地铁",
     www:[ { title:"新闻",
@@ -8672,7 +8727,7 @@
         docs:"https://docs.rsshub.app/routes/social-media#keep",
         source:"/users/:id",
         target:"/keep/user/:id" } ] },
-  "kemono.party":{ _name:"Kemono",
+  "kemono.su":{ _name:"Kemono",
     ".":[ { title:"Posts",
         docs:"https://docs.rsshub.app/routes/anime#kemono-posts",
         source:[ "/:source/user/:id",

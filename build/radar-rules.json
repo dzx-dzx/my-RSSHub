@@ -3274,6 +3274,12 @@
         "docs": "https://docs.rsshub.app/routes/anime#bangumi-fan-zu-ji-hua",
         "source": "/calendar",
         "target": "/bangumi/tv/calendar/today"
+      },
+      {
+        "title": "成员关注动画榜",
+        "docs": "https://docs.rsshub.app/routes/anime#bangumi-fan-zu-ji-hua",
+        "source": "/anime",
+        "target": "/bangumi/tv/followrank"
       }
     ]
   },
@@ -3333,6 +3339,12 @@
         "docs": "https://docs.rsshub.app/routes/anime#bangumi-fan-zu-ji-hua",
         "source": "/calendar",
         "target": "/bangumi/tv/calendar/today"
+      },
+      {
+        "title": "成员关注动画榜",
+        "docs": "https://docs.rsshub.app/routes/anime#bangumi-fan-zu-ji-hua",
+        "source": "/anime",
+        "target": "/bangumi/tv/followrank"
       }
     ]
   },
@@ -4207,6 +4219,19 @@
         "title": "MMDArchive 标签查询",
         "docs": "https://docs.rsshub.app/routes/picture#booru-mmdarchive-biao-qian-cha-xun",
         "source": "/index.php"
+      }
+    ]
+  },
+  "bossdesign.cn": {
+    "_name": "Boss 设计",
+    ".": [
+      {
+        "title": "分类",
+        "docs": "https://docs.rsshub.app/routes/design#boss-she-ji",
+        "source": [
+          "/:category?",
+          "/"
+        ]
       }
     ]
   },
@@ -6459,6 +6484,18 @@
           "/"
         ],
         "target": "/cls/hot"
+      }
+    ]
+  },
+  "cma.cn": {
+    "_name": "中国气象局",
+    "weather": [
+      {
+        "title": "天气预报频道",
+        "docs": "https://docs.rsshub.app/routes/forecast#zhong-guo-qi-xiang-ju-tian-qi-yu-bao-pin-dao",
+        "source": [
+          "/web/*"
+        ]
       }
     ]
   },
@@ -11419,6 +11456,28 @@
       }
     ]
   },
+  "moa.gov.cn": {
+    "_name": "中华人民共和国农业农村部",
+    ".": [
+      {
+        "title": "新闻",
+        "docs": "https://docs.rsshub.app/routes/government#zhong-hua-ren-min-gong-he-guo-jiao-yu-bu-xin-wen",
+        "source": [
+          "/"
+        ],
+        "target": "/gov/moa/:suburl"
+      }
+    ],
+    "zdscxx": [
+      {
+        "title": "数据",
+        "docs": "https://docs.rsshub.app/routes/government#zhong-hua-ren-min-gong-he-guo-jiao-yu-bu",
+        "source": [
+          "/nyb/pc/messageView.jsp"
+        ]
+      }
+    ]
+  },
   "moe.gov.cn": {
     "_name": "中华人民共和国教育部",
     ".": [
@@ -11870,6 +11929,13 @@
         "target": "/gov/news/gwy"
       },
       {
+        "title": "政策",
+        "docs": "https://docs.rsshub.app/routes/government#zhong-guo-zheng-fu-wang-zheng-ce",
+        "source": [
+          "/zhengce/:category*"
+        ]
+      },
+      {
         "title": "最新政策",
         "docs": "https://docs.rsshub.app/routes/government#zhong-guo-zheng-fu-wang",
         "source": [
@@ -12127,6 +12193,13 @@
         "docs": "https://docs.rsshub.app/routes/shopping#guang-diu",
         "source": [
           "/cheaps.php"
+        ]
+      },
+      {
+        "title": "关键字搜索",
+        "docs": "https://docs.rsshub.app/routes/shopping#guang-diu",
+        "source": [
+          "/search.php"
         ]
       }
     ]
@@ -16430,7 +16503,7 @@
       }
     ]
   },
-  "kemono.party": {
+  "kemono.su": {
     "_name": "Kemono",
     ".": [
       {
