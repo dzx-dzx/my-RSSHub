@@ -2808,6 +2808,42 @@
       }
     ]
   },
+  "auto-stats.org.cn": {
+    "_name": "中国汽车工业协会统计信息网",
+    ".": [
+      {
+        "title": "分类",
+        "docs": "https://docs.rsshub.app/routes/other#zhong-guo-qi-che-xie-hui-tong-ji-xin-xi-wang-fen-lei",
+        "source": [
+          "/:category"
+        ]
+      },
+      {
+        "title": "信息快递",
+        "docs": "https://docs.rsshub.app/routes/other#zhong-guo-qi-che-xie-hui-tong-ji-xin-xi-wang-fen-lei",
+        "source": [
+          "/xxkd.asp"
+        ],
+        "target": "/auto-stats/xxkd"
+      },
+      {
+        "title": "工作动态",
+        "docs": "https://docs.rsshub.app/routes/other#zhong-guo-qi-che-xie-hui-tong-ji-xin-xi-wang-fen-lei",
+        "source": [
+          "/gzdt.asp"
+        ],
+        "target": "/auto-stats/gzdt"
+      },
+      {
+        "title": "专题分析",
+        "docs": "https://docs.rsshub.app/routes/other#zhong-guo-qi-che-xie-hui-tong-ji-xin-xi-wang-fen-lei",
+        "source": [
+          "/ztfx.asp"
+        ],
+        "target": "/auto-stats/ztfx"
+      }
+    ]
+  },
   "baai.ac.cn": {
     "_name": "北京智源人工智能研究院",
     "hub": [
@@ -20901,6 +20937,30 @@
       }
     ]
   },
+  "modrinth.com": {
+    "_name": "Modrinth",
+    ".": [
+      {
+        "title": "Project versions",
+        "docs": "https://docs.rsshub.app/routes/game#modrinth-project-versions",
+        "source": [
+          "/mod/:id/*",
+          "/plugin/:id/*",
+          "/datapack/:id/*",
+          "/shader/:id/*",
+          "/resourcepack/:id/*",
+          "/modpack/:id/*",
+          "/mod/:id",
+          "/plugin/:id",
+          "/datapack/:id",
+          "/shader/:id",
+          "/resourcepack/:id",
+          "/modpack/:id"
+        ],
+        "target": "/modrinth/project/:id/versions"
+      }
+    ]
+  },
   "mohw.gov.tw": {
     "_name": "台灣衛生福利部",
     ".": [
@@ -23992,6 +24052,20 @@
           "/writing"
         ],
         "target": "/paradigm/writing"
+      }
+    ]
+  },
+  "parliament.go.th": {
+    "_name": "รัฐสภา",
+    ".": [
+      {
+        "title": "รับฟังความคิดเห็นต่อร่าง พ.ร.บ. ตามมาตรา 77 ของรัฐธรรมนูญ",
+        "docs": "https://docs.rsshub.app/routes/government#thailand-parliament",
+        "source": [
+          "/section77/index.php",
+          "/section77/survey_list77.php",
+          "/section77/survey_more_news.php"
+        ]
       }
     ]
   },
