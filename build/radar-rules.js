@@ -4472,6 +4472,9 @@
 
                     return `/chinaisa${columnId ? `/${columnId}` : ''}`;
                 } } ] },
+  "chinamoney.com.cn":{ _name:"中国货币网",
+    ".":[ { title:"公告",
+        docs:"https://docs.rsshub.app/routes/finance#zhong-guo-huo-bi-wang" } ] },
   "chinanews.com.cn":{ _name:"中国新闻网",
     ".":[ { title:"最新",
         docs:"https://docs.rsshub.app/routes/traditional-media#zhong-xin-wang",
@@ -5541,6 +5544,11 @@
         docs:"https://docs.rsshub.app/routes/social-media#crossbell",
         source:"/*",
         target:"/crossbell/notes/source/xlog" } ] },
+  "cs.com.cn":{ _name:"中证网",
+    ".":[ { title:"中证快讯",
+        docs:"https://docs.rsshub.app/routes/finance#zhong-zheng-wang-zhong-zheng-kuai-xun",
+        source:[ "/sylm/jsbd/" ],
+        target:"/cs/zzkx" } ] },
   "csdn.net":{ _name:"CSDN",
     blog:[ { title:"博客",
         docs:"https://docs.rsshub.app/routes/blog#csdn",
@@ -12786,7 +12794,11 @@
         target:(params, url) => {
             const uid = new URL(url).searchParams.get('id');
             return `/mihoyo/bbs/user-post/${uid}`;
-        } } ],
+        } },
+      { title:"米游社 - 用户关注动态",
+        docs:"https://docs.rsshub.app/routes/game#mi-ha-you",
+        source:"/:game/timeline",
+        target:"/mihoyo/bbs/timeline" } ],
     sr:[ { title:"崩坏：星穹铁道 - 新闻",
         docs:"https://docs.rsshub.app/routes/game##mi-ha-you",
         source:"/news",
@@ -12840,7 +12852,11 @@
         target:(params, url) => {
             const uid = new URL(url).searchParams.get('id');
             return `/mihoyo/bbs/user-post/${uid}`;
-        } } ] },
+        } },
+      { title:"米游社 - 用户关注动态",
+        docs:"https://docs.rsshub.app/routes/game#mi-ha-you",
+        source:"/:game/timeline",
+        target:"/mihoyo/bbs/timeline" } ] },
   "mindmeister.com":{ _name:"MindMeister",
     ".":[ { title:"分类",
         docs:"https://docs.rsshub.app/routes/study#mindmeister",
@@ -17349,6 +17365,11 @@
         source:[ "/app/:id/review",
           "/app/:id" ],
         target:"/taptap/intl/review/:id" } ] },
+  "tass.com":{ _name:"Russian News Agency TASS",
+    ".":[ { title:"News",
+        docs:"https://docs.rsshub.app/routes/traditional-media.html#russian-news-agency-tass",
+        source:[ "/:category" ],
+        target:"/tass/:category" } ] },
   "techcrunch.com":{ _name:"TechCrunch",
     ".":[ { title:"新闻",
         docs:"https://docs.rsshub.app/routes/new-media#techcrunch",
@@ -19160,6 +19181,15 @@
         docs:"https://docs.rsshub.app/routes/new-media#wei-ji-xin-wen",
         source:[ "/wizfile/download" ],
         target:"/wizfile/updates" } ] },
+  "wmc-bj.net":{ _name:"World Meteorological Centre Beijing",
+    ".":[ { title:"Publish",
+        docs:"https://docs.rsshub.app/routes/other#world-meteorological-centre-beijing-publish",
+        source:[ "/publish/:category*" ],
+        target:(params) => {
+                    const category = params.category;
+
+                    return `/wmc-bj/publish${category ? `/${category}` : ''}`;
+                } } ] },
   "wnacg.org":{ _name:"紳士漫畫",
     ".":[ { title:"最新",
         docs:"https://docs.rsshub.app/routes/anime#shen-shi-man-hua",
