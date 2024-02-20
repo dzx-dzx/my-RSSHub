@@ -2340,6 +2340,9 @@
     "/fosshub/:id": [
         "nczitzk"
     ],
+    "/free": [
+        "cnkmmk"
+    ],
     "/freebuf/articles/:type": [
         "trganda"
     ],
@@ -3543,7 +3546,19 @@
     "/indiansinkuwait/latest": [
         "TonyRL"
     ],
-    "/indienova/:type": [],
+    "/indienova/:type": [
+        "GensouSakuya",
+        "kt286"
+    ],
+    "/indienova/column/:columnId": [
+        "TonyRL"
+    ],
+    "/indienova/gamedb/recent": [
+        "TonyRL"
+    ],
+    "/indienova/usergames": [
+        "TonyRL"
+    ],
     "/inewsweek/:channel": [
         "changren-wcr"
     ],
@@ -5377,6 +5392,9 @@
     "/playno1/st/:catid?": [
         "TonyRL"
     ],
+    "/playpcesor": [
+        "cnkmmk"
+    ],
     "/plurk/anonymous": [
         "TonyRL"
     ],
@@ -6772,6 +6790,9 @@
         "nczitzk"
     ],
     "/trakt/collection/:username/:type?": [],
+    "/transcriptforest/:channel?": [
+        "nczitzk"
+    ],
     "/treasury/press-releases/:category?/:title?": [],
     "/trending/:keywords/:numberOfDays?": [
         "Jkker"
