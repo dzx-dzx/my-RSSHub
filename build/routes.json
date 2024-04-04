@@ -4237,6 +4237,37 @@
     "name": "Aqara",
     "url": "aqara.com"
   },
+  "aqicn": {
+    "routes": {
+      "/:city/:pollution?": {
+        "path": "/:city/:pollution?",
+        "categories": [
+          "other"
+        ],
+        "example": "/aqicn/beijing/pm25",
+        "parameters": {
+          "city": "城市拼音或地区 ID，详见[aqicn.org](http://aqicn.org/city/)",
+          "pollution": "可选择显示更详细的空气污染成分"
+        },
+        "radar": [
+          {
+            "source": [
+              "aqicn.org"
+            ]
+          }
+        ],
+        "name": "实时 AQI",
+        "maintainers": [
+          "ladeng07"
+        ],
+        "url": "aqicn.org",
+        "descriptions": "\n|   参数   | 污染成分 |\n| -------- | -------- |\n|   pm25   |  PM2.5   |\n|   pm10   |  PM10    |\n|   o3     |  O3      |\n|   no2    |  NO2     |\n|   so2    |  SO2     |\n|   co     |  CO      |\n\n举例: [https://rsshub.app/aqicn/beijing/pm25,pm10](https://rsshub.app/aqicn/beijing/pm25,pm10)\n\n1. 显示单个污染成分，例如「pm25」, [https://rsshub.app/aqicn/beijing/pm25](https://rsshub.app/aqicn/beijing/pm25)\n2. 逗号分隔显示多个污染成分，例如「pm25,pm10」，[https://rsshub.app/aqicn/beijing/pm25,pm10](https://rsshub.app/aqicn/beijing/pm25,pm10)\n3. 城市子站 ID 获取方法：右键显示网页源代码，搜索 \"idx\" （带双冒号），后面的 ID 就是子站的 ID，如你给的链接 ID 是 4258，RSS 地址就是 [https://rsshub.app/aqicn/4258](https://rsshub.app/aqicn/4258)\n",
+        "location": "aqi.ts"
+      }
+    },
+    "name": "空气质量",
+    "url": "aqicn.org"
+  },
   "arcteryx": {
     "routes": {
       "/new-arrivals/:country/:gender": {
@@ -5004,7 +5035,7 @@
         "maintainers": [
           "JimenezLi"
         ],
-        "description": "| 键           | 含义                                                       | 接受的值      | 默认值 |\n  | ------------ | ---------------------------------------------------------- | ------------- | ------ |\n  | kw           | 在名为 kw 的贴吧中搜索                                     | 任意名称 / 无 | 无     |\n  | only_thread | 只看主题帖，默认为 0 关闭                                  | 0/1           | 0      |\n  | rn           | 返回条目的数量                                             | 1-20          | 20     |\n  | sm           | 排序方式，0 为按时间顺序，1 为按时间倒序，2 为按相关性顺序 | 0/1/2         | 1      |\n\n  用例：`/baidu/tieba/search/neuro/kw=neurosama&only_thread=1&sm=2`",
+        "description": "| 键           | 含义                                                       | 接受的值      | 默认值 |\n  | ------------ | ---------------------------------------------------------- | ------------- | ------ |\n  | kw           | 在名为 kw 的贴吧中搜索                                     | 任意名称 / 无 | 无     |\n  | only_thread  | 只看主题帖，默认为 0 关闭                                  | 0/1           | 0      |\n  | rn           | 返回条目的数量                                             | 1-20          | 20     |\n  | sm           | 排序方式，0 为按时间顺序，1 为按时间倒序，2 为按相关性顺序 | 0/1/2         | 1      |\n\n  用例：`/baidu/tieba/search/neuro/kw=neurosama&only_thread=1&sm=2`",
         "location": "tieba/search.ts"
       },
       "/tieba/user/:uid": {
@@ -28017,23 +28048,26 @@
   },
   "idaily": {
     "routes": {
-      "/today/:language?": {
-        "path": [
-          "/today/:language?",
-          "/:language?"
-        ],
-        "name": "Unknown",
-        "maintainers": [],
-        "description": "| 简体中文 | 繁体中文 |\n  | -------- | -------- |\n  | zh-hans  | zh-hant  |",
-        "location": "index.ts"
-      },
       "/:language?": {
         "path": [
-          "/today/:language?",
           "/:language?"
         ],
-        "name": "Unknown",
-        "maintainers": [],
+        "name": "每日环球视野",
+        "example": "/idaily",
+        "maintainers": [
+          "zphw",
+          "nczitzk"
+        ],
+        "parameters": {
+          "language": "语言，见下表，默认为简体中文"
+        },
+        "radar": [
+          {
+            "source": [
+              "idai.ly/"
+            ]
+          }
+        ],
         "description": "| 简体中文 | 繁体中文 |\n  | -------- | -------- |\n  | zh-hans  | zh-hant  |",
         "location": "index.ts"
       }
@@ -33406,6 +33440,47 @@
     },
     "name": "洛谷",
     "url": "luogu.com.cn"
+  },
+  "luolei": {
+    "routes": {
+      "/": {
+        "path": "/",
+        "name": "罗磊的独立博客",
+        "url": "luolei.org",
+        "maintainers": [
+          "nczitzk"
+        ],
+        "example": "/luolei",
+        "description": "",
+        "categories": [
+          "blog"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportRadar": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "luolei.org"
+            ],
+            "target": "/"
+          }
+        ],
+        "location": "index.ts"
+      }
+    },
+    "name": "罗磊的独立博客",
+    "url": "luolei.org",
+    "categories": [
+      "blog"
+    ],
+    "description": ""
   },
   "luxiangdong": {
     "routes": {
@@ -39691,6 +39766,32 @@
     },
     "name": "Nyaa",
     "url": "nyaa.si"
+  },
+  "nymity": {
+    "routes": {
+      "/censorbib": {
+        "path": "/censorbib",
+        "categories": [
+          "journal"
+        ],
+        "example": "/nymity/censorbib",
+        "radar": [
+          {
+            "source": [
+              "censorbib.nymity.ch/"
+            ]
+          }
+        ],
+        "name": "CensorBib Updates",
+        "maintainers": [
+          "xtexChooser"
+        ],
+        "url": "censorbib.nymity.ch/",
+        "location": "censorbib.ts"
+      }
+    },
+    "name": "nymity",
+    "url": "censorbib.nymity.ch"
   },
   "nytimes": {
     "routes": {
@@ -56886,6 +56987,39 @@
         "description": "| 信息 | 教学     | 考试 | 交流     |\n  | ---- | -------- | ---- | -------- |\n  | info | teaching | exam | exchange |",
         "location": "jwc.ts"
       },
+      "/math/:type?": {
+        "path": "/math/:type?",
+        "categories": [
+          "university"
+        ],
+        "example": "/ustc/math/tzgg",
+        "parameters": {
+          "type": "分类，见下表，默认为通知公告"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "math.ustc.edu.cn/"
+            ],
+            "target": "/math"
+          }
+        ],
+        "name": "数学科学学院",
+        "maintainers": [
+          "ne0-wu"
+        ],
+        "url": "math.ustc.edu.cn/",
+        "description": "| 学院新闻 | 通知公告 | 学术交流 | 学术报告 |\n  | -------- | -------- | -------- | -------- |\n  | xyxw     | tzgg     | xsjl     | xsbg     |",
+        "location": "math.ts"
+      },
       "/sist/:type?": {
         "path": "/sist/:type?",
         "categories": [
@@ -59642,6 +59776,21 @@
   },
   "xiaoheihe": {
     "routes": {
+      "/add2cart/:platform": {
+        "path": "/add2cart/:platform",
+        "categories": [
+          "game"
+        ],
+        "example": "/xiaoheihe/add2cart/epic",
+        "parameters": {
+          "platform": "平台名：epic、steam或gog"
+        },
+        "name": "喜加一",
+        "maintainers": [
+          "ladeng07"
+        ],
+        "location": "add2cart.ts"
+      },
       "/discount/:platform": {
         "path": "/discount/:platform",
         "categories": [
@@ -60698,6 +60847,35 @@
         ],
         "description": "| 公告         | 新闻 | 研报     |\n  | ------------ | ---- | -------- |\n  | announcement | news | research |",
         "location": "stock-info.ts"
+      },
+      "/timeline/:usergroup_id?": {
+        "path": "/timeline/:usergroup_id?",
+        "categories": [
+          "finance"
+        ],
+        "example": "/xueqiu/timeline/",
+        "parameters": {
+          "usergroup_id": "用户组 ID，-1 为全部关注用户"
+        },
+        "features": {
+          "requireConfig": [
+            {
+              "name": "XUEQIU_COOKIES",
+              "description": ""
+            }
+          ],
+          "requirePuppeteer": false,
+          "antiCrawler": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "用户关注时间线",
+        "maintainers": [
+          "ErnestDong"
+        ],
+        "description": ":::warning\n  用户关注动态需要登录后的 Cookie 值，所以只能自建，详情见部署页面的配置模块。\n  :::\n\n  | -1   | -2       | 1             |\n  | ---- | -------- | ------------- |\n  | 全部 | 关注精选 | 自定义第 1 组 |",
+        "location": "timeline.ts"
       },
       "/today": {
         "path": "/today",

@@ -430,6 +430,9 @@
   "/aqara/cn/news": [],
   "/aqara*": [],
   "/aqara/:region/:type?": [],
+  "/aqicn/:city/:pollution?": [
+    "ladeng07"
+  ],
   "/arcteryx/new-arrivals/:country/:gender": [
     "EthanWng97"
   ],
@@ -2824,8 +2827,10 @@
   "/icbc/whpj/:format?": [
     "leoleoasd"
   ],
-  "/idaily/today/:language?": [],
-  "/idaily/:language?": [],
+  "/idaily/:language?": [
+    "zphw",
+    "nczitzk"
+  ],
   "/idolypride/news": [
     "Mingxia1"
   ],
@@ -3380,6 +3385,9 @@
   "/luogu/user/blog/:name": [],
   "/luogu/user/feed/:uid": [
     "solstice23"
+  ],
+  "/luolei/": [
+    "nczitzk"
   ],
   "/luxiangdong/archive": [
     "Levix"
@@ -4009,6 +4017,9 @@
   "/nyaa/sukebei/user/:username/search/:query?": [
     "Lava-Swimmer",
     "noname1776"
+  ],
+  "/nymity/censorbib": [
+    "xtexChooser"
   ],
   "/nytimes/book/:category?": [
     "melvinto"
@@ -5722,6 +5733,9 @@
   "/ustc/jwc/:type?": [
     "hang333"
   ],
+  "/ustc/math/:type?": [
+    "ne0-wu"
+  ],
   "/ustc/sist/:type?": [
     "jasongzy"
   ],
@@ -6006,6 +6020,9 @@
   "/xboxfan/news": [
     "XXY233"
   ],
+  "/xiaoheihe/add2cart/:platform": [
+    "ladeng07"
+  ],
   "/xiaoheihe/discount/:platform": [
     "tssujt"
   ],
@@ -6119,6 +6136,9 @@
   "/xueqiu/stock_comments/:id": [],
   "/xueqiu/stock_info/:id/:type?": [
     "YuYang"
+  ],
+  "/xueqiu/timeline/:usergroup_id?": [
+    "ErnestDong"
   ],
   "/xueqiu/today": [
     "nczitzk"
