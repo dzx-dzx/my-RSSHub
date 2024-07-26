@@ -62,11 +62,12 @@ export const getSignedHeader = async (url: string, apiPath: string, fromZhuanlan
 
     // fisrt: get cookie(dc_0) from zhihu.com
     const { dc0, zseCk } = await cache.tryGet('zhihu:cookies:d_c0, __zse_ck', async () => {
-        const response1 = await ofetch.raw(fromZhuanlan ? 'https://www.zhihu.com/people/diygod' : url);
+        const urlForCookie = fromZhuanlan ? 'https://www.zhihu.com/people/diygod' : url;
+        const response1 = await ofetch.raw(urlForCookie);
         const zseCk = response1._data.match(/var e="__zse_ck",t=\(typeof __g\.ck == 'string' && __g\.ck\)\|\|"([\w+/=]*?)",_=6048e5;/)?.[1];
 
         const response2 = zseCk
-            ? await ofetch.raw(url, {
+            ? await ofetch.raw(urlForCookie, {
                   headers: {
                       cookie: `${response1.headers
                           .getSetCookie()
